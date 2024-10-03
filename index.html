@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie App</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./css/style.css.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-custom">
+        <div class="container city-dropdown">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Cari film kesukaanmu">
+            </div>
+            <div class="select">
+                <select class="form-select" aria-label="Pilih kota">
+                    <option selected>Yogyakarta</option>
+                    <option value="1">Jakarta</option>
+                    <option value="2">Bandung</option>
+                    <option value="3">Surabaya</option>
+                </select>
+            </div>
+        </div>
+    </nav>
+    <!-- Slide animation -->
+    <div class="body-slider">
+     <div class="container-slide">
+        <div class="wrapper">
+            <img src="./img/slide.png" alt="">
+            <img src="./img/slide1.png" alt="">
+            <img src="./img/slide2.png" alt="">
+            <img src="./img/slide3.png" alt="">
+            <img src="./img/slide1.png" alt="">
+            <img src="./img/slide.png" alt="">
+        </div>
+     </div>
+    </div>
+    <!-- Sedang Tayang -->
+    <div class="container-tayang">
+        <div class="container currently-showing">
+            <h4>Sedang Tayang</h4>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card">
+                        <img src="https://via.placeholder.com/300x400" class="card-img-top movie-poster" alt="movie poster">
+                        <div class="card-body">
+                            <h5 class="card-title movie-title">Movie Title 1</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <img src="https://via.placeholder.com/300x400" class="card-img-top movie-poster" alt="movie poster">
+                        <div class="card-body">
+                            <h5 class="card-title movie-title">Movie Title 2</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Placeholder Text -->
+        <div class="container placeholder-text">
+            <p>Lorem ipsum dolor sit amet consectetur.</p>
+        </div>
+    
+        <!-- Coming Soon -->
+        <div class="container coming-soon">
+            <h4>Akan Tayang</h4>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card">
+                        <img src="https://via.placeholder.com/300x400" class="card-img-top movie-poster" alt="movie poster">
+                        <div class="card-body">
+                            <h5 class="card-title movie-title">Movie Title 3</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <img src="https://via.placeholder.com/300x400" class="card-img-top movie-poster" alt="movie poster">
+                        <div class="card-body">
+                            <h5 class="card-title movie-title">Movie Title 4</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
