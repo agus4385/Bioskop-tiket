@@ -1,0 +1,502 @@
+@import url('https://fonts.googleapis.com/css2?family=Protest+Strike&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.body{
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    justify-content: center;
+
+}
+.container{
+    max-width: 100%;
+}
+/* Navbar custom styling */
+.navbar-custom {
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-radius: 10px;
+    border-bottom: 1px solid #dee2e6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; 
+}
+
+/* City dropdown and input group */
+.city-dropdown .input-group {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+
+.search-input {
+    border-radius: 20px;
+    padding-left: 20px;
+    height: 40px;
+    width: 100%; 
+}
+
+.input-group-text {
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.input-group-text i {
+    background-color: transparent;
+}
+
+/* City select dropdown */
+.city-select {
+    height: 40px;
+    border-radius: 20px;
+    min-width: 150px; 
+    margin-left: 10px; 
+}
+
+/* Profile icon */
+.profile-icon {
+    font-size: 24px;
+    color: #000;
+    cursor: pointer;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .navbar-custom {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+    }
+
+    .search-input {
+        margin-bottom: 10px; 
+    }
+
+    .city-select {
+        width: 100%; 
+        margin-bottom: 10px; 
+    }
+
+    .input-group {
+        width: 100%;
+    }
+
+    .input-group-text {
+        right: 20px; 
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-icon {
+        font-size: 20px; 
+    }
+}
+
+/* Slide animation */
+.body-slider{
+    background-color: aqua;
+    position: relative;
+    margin-top: 30vh;
+}
+
+.container-slide{
+    width: 160vmin; 
+    height: 50vmin;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    overflow: hidden;
+    border-radius: 10px;
+    border: 10px solid #ffffff;
+    box-shadow: 0px 5px 10px 5px rgba(30, 30, 200, 0.3);
+}
+
+.wrapper{
+    display: flex;
+    animation: slide 16s infinite;
+}
+
+.wrapper img {
+    border-radius: 10px;
+    width: 50%;
+}
+    
+
+
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(0);
+    }
+    30% {
+        transform: translateX(-100%);
+    }
+    50% {
+        transform: translateX(-100%);
+    }
+    55% {
+        transform: translateX(-200%);
+    }
+    75% {
+        transform: translateX(-200%);
+    }
+    80% {
+        transform: translateX(-300%);
+    }
+    99% {
+        transform: translateX(-300%);
+    }
+    100% {
+        transform: translateX(0); 
+    }
+}
+/* Responsive untuk layar kecil */
+@media (max-width: 768px) {
+    .container-slide {
+        width: 100vmin; 
+        height: 60vmin; 
+        border: 20px solid #ffffff;
+    }
+
+    .wrapper img {
+        width: 100%; 
+    }
+}
+
+/* Responsive untuk layar yang lebih kecil lagi, seperti smartphone */
+@media (max-width: 480px) {
+    .container-slide {
+        width: 90vmin; 
+        height: 50vmin; 
+        border: 15px solid #ffffff;
+    }
+
+    .wrapper img {
+        width: 100%; 
+    }
+    
+}
+
+/* Container tayang */
+.container-section{
+    background-color: rgb(6, 182, 242);
+
+}
+.bacground{
+    background-color: rgba(255, 255, 255, 0.8);
+}
+.tayang {
+    /* background-color: #0066ff;  */
+    padding: 15px;
+    border-radius: 5px;
+    /* margin-left: 20px 15px; */
+    text-align: center;
+    /* height: 7vh; */
+}
+.sedang-tayang{
+    margin-top: 60vh;
+}
+
+
+
+.wrapper-card {
+    max-width: 1250px;
+    position: relative;
+    width: 100%;
+    /* margin-top: 4vh; */
+    margin-bottom: 3vh;
+}
+
+.wrapper-card .carousel {
+    display: flex;
+    cursor: pointer;
+    font-size: 0px;
+    scroll-behavior: smooth;
+    overflow: hidden;
+}
+
+.img-container {
+    position: relative;
+    width: 390px; 
+    flex-shrink: 0;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;   
+    border-radius: 10px; 
+    box-shadow: 0px 5px 5px 1px rgba(0, 0, 0, 0.5);
+
+}
+.img-container:hover img {
+    border-radius: 10px;
+
+    transform: scale(1.1); /* Zoom in gambar */
+    transition: transform 0.5s ease-in-out; /* Efek transisi smooth */
+}
+.carousel{
+    gap: 20px;
+    padding: 1rem;
+    margin-left: 8px;
+}
+.carousel img {
+    height: 400px;
+    width: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 10px;
+   
+    /* border: 5px solid rgb(255, 255, 255); */
+}
+    
+    
+
+/* Hover Content */
+.hover-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease-in-out, background-color 0.5s ease-in-out;
+    opacity: 0;
+    transition: opacity 0.3s;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Judul dan Deskripsi */
+.img-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.img-description {
+    font-size: 16px;
+}
+
+/* Hover effect */
+.img-container:hover .hover-content {
+    opacity: 1;
+
+    border-radius: 10px;
+    background: linear-gradient(to top, rgb(0, 159, 245), rgba(0, 159, 245, 0.5),  rgba(0, 0, 0, 0.1)); /* Gradient dari bawah */
+    transition: opacity 0.5s ease-in-out, background 0.5s ease-in-out; /* Smooth keluar hover */
+
+    
+}
+
+/* Navigasi panah */
+.wrapper-card i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 8px;
+    border-radius: 50%;
+    height: 46px;
+    width: 46px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.sedang-tayang h4 {
+    /* margin-bottom: 2rem; */
+    text-align: center;
+    font-size: 5rem;
+    color: #ffffff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    font-family: "Protest Strike", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#left {
+    left: 10px;
+}
+
+#right {
+    right: 10px;
+}
+
+
+
+/* Warna untuk link "Semua Bioskop" */
+.btn-bioskop1 {
+    background-color: #0008fc; 
+    color: rgb(255, 255, 255);
+    padding: 1px 8px;
+    border-radius: 5px;
+    text-decoration: none; 
+    margin-right: 7.5px; 
+    font-weight: bold; 
+    font-size: 25px;
+}
+
+/* Warna untuk link "CGV" */
+.btn-bioskop {
+    background-color: #ff4757; 
+    color: white;
+    padding: 1px 8px; 
+    border-radius: 5px; 
+    text-decoration: none; 
+    margin-right: 7.5px; 
+    font-weight: bold; 
+    font-size: 25px;
+}
+
+/* Warna untuk link "XXI" */
+.btn-bioskop:nth-child(3) {
+    background-color: #ffa502; 
+    color: white;
+    padding: 1px 8px; 
+    border-radius: 5px; 
+    text-decoration: none;
+    font-weight: bold; 
+}
+
+.btn-bioskop1:hover, .btn-bioskop:hover {
+    opacity: 0.85; 
+    color: #000000;
+}
+
+.card-slide {
+    background-color: #0066ff;
+    display: grid;
+    grid-auto-flow: column;
+    gap: 5px;
+}
+
+/* Styling untuk div tayang agar terlihat lebih rapi */
+.tayang2 {
+    padding: 15px;
+    border-radius: 5px;
+    /* margin-left: 20px 15px; */
+    text-align: center;
+}
+
+.sedang-tayang2 h4 {
+    /* margin-bottom: 2rem; */
+    text-align: center;
+    font-size: 5rem;
+    color: #ffffff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    font-family: "Protest Strike", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+/* Responsive untuk layar kecil */
+@media (max-width: 768px) {
+    .img-container {
+        width: 100%; 
+    }
+    
+    .carousel img {
+        height: 400px;
+        width: 100%;
+    }
+    .sedang-tayang h4{
+        font-size: 60px;
+    }
+    .sedang-tayang2 h4{
+        font-size: 60px;
+    }
+}
+
+/* Cardd?? */
+
+
+
+.card {
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.card img {
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.card:hover img {
+    transform: scale(1.1);
+}
+
+.card-body {
+    position: relative;
+}
+
+.card-body h5 {
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+.card-body p {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+.rating {
+    font-size: 0.9rem;
+    color: #ffcc00;
+}
+
+.modal-header {
+    background-color: #007bff;
+    color: white;
+}
+
+.modal-body {
+    padding: 2rem;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+@media (max-width: 576px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .modal-body {
+        padding: 1rem;
+    }
+}
+
+
+
+/* /////// */

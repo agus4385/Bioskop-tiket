@@ -1,97 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movie App</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="./css/style.css.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+  <link rel="stylesheet" href="dashboard.css">
+  <title>Dashboard</title>
 </head>
-<body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-custom">
-        <div class="container city-dropdown">
-            <div class="input-group">
-                <input type="text" class="form-control" placeholder="Cari film kesukaanmu">
+<body>    
+  <!-- Navbar -->
+  <nav class="navbar navbar-custom">
+    <div class="container-fluid city-dropdown">
+        <div class="row w-100 align-items-center">
+            <!-- Kolom Pencarian Film -->
+            <div class="col-8">
+                <div class="input-group">
+                    <input type="text" class="form-control search-input" placeholder="Cari film kesukaanmu">
+                    <span class="input-group-text">
+                        <i class="bi bi-search"></i> <!-- Ikon pencarian -->
+                    </span>
+                </div>
             </div>
-            <div class="select">
-                <select class="form-select" aria-label="Pilih kota">
-                    <option selected>Yogyakarta</option>
+
+            <!-- Dropdown Pilihan Kota -->
+            <div class="col-3">
+                <select class="form-select city-select" aria-label="Pilih kota">
+                    <option selected value="Yogyakarta">Yogyakarta</option>
                     <option value="1">Jakarta</option>
                     <option value="2">Bandung</option>
                     <option value="3">Surabaya</option>
                 </select>
             </div>
-        </div>
-    </nav>
-    <!-- Slide animation -->
-    <div class="body-slider">
-     <div class="container-slide">
-        <div class="wrapper">
-            <img src="./img/slide.png" alt="">
-            <img src="./img/slide1.png" alt="">
-            <img src="./img/slide2.png" alt="">
-            <img src="./img/slide3.png" alt="">
-            <img src="./img/slide1.png" alt="">
-            <img src="./img/slide.png" alt="">
-        </div>
-     </div>
-    </div>
-    <!-- Sedang Tayang -->
-    <div class="container-tayang">
-        <div class="container currently-showing">
-            <h4>Sedang Tayang</h4>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="card">
-                        <img src="https://via.placeholder.com/300x400" class="card-img-top movie-poster" alt="movie poster">
-                        <div class="card-body">
-                            <h5 class="card-title movie-title">Movie Title 1</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="card">
-                        <img src="https://via.placeholder.com/300x400" class="card-img-top movie-poster" alt="movie poster">
-                        <div class="card-body">
-                            <h5 class="card-title movie-title">Movie Title 2</h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    
-        <!-- Placeholder Text -->
-        <div class="container placeholder-text">
-            <p>Lorem ipsum dolor sit amet consectetur.</p>
-        </div>
-    
-        <!-- Coming Soon -->
-        <div class="container coming-soon">
-            <h4>Akan Tayang</h4>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="card">
-                        <img src="https://via.placeholder.com/300x400" class="card-img-top movie-poster" alt="movie poster">
-                        <div class="card-body">
-                            <h5 class="card-title movie-title">Movie Title 3</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="card">
-                        <img src="https://via.placeholder.com/300x400" class="card-img-top movie-poster" alt="movie poster">
-                        <div class="card-body">
-                            <h5 class="card-title movie-title">Movie Title 4</h5>
-                        </div>
-                    </div>
-                </div>
+
+            <!-- Ikon Profil -->
+            <div class="col-1 text-end">
+                <i class="bi bi-person-circle profile-icon"></i> <!-- Ikon profile -->
             </div>
         </div>
     </div>
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</nav>
+
+  <!-- Slide animation -->
+  <div class="body-slider">
+    <div class="container-slide">
+      <div class="wrapper">
+        <img src="./path/slide.png" alt="">
+        <img src="./path/slide1.png" alt="">
+        <img src="./path/slide2.png" alt="">
+        <img src="./path/slide3.png" alt="">
+        <img src="./path/slide.png" alt="">
+        <img src="./path/slide1.png" alt="">
+        <img src="./path/slide2.png" alt="">
+        <img src="./path/slide3.png" alt="">
+      </div>
+    </div>
+  </div>
+
+  <!-- Sedang Tayang Section -->
+  <div class="container-section">
+    <!-- Header Section -->
+    <div class="sedang-tayang">
+      <h4>SEDANG TAYANG</h4>
+    </div>
+
+    <!-- Tab untuk Pilihan Bioskop -->
+<div class="bacground">
+
+    <div class="tayang">
+      <div class="d-flex mb-0">
+        <a href="#" class="btn-bioskop1">Semua Bioskop</a>
+        <a href="#" class="btn-bioskop">CGV</a>
+        <a href="#" class="btn-bioskop">XXI</a>
+      </div>
+    </div>
+    <!-- Card Slide -->
+    <div class="wrapper-card">
+    <i class="fa-solid fa-angle-left" id="left"></i>
+    <div class="carousel">
+        <div class="img-container">
+            <img src="./path/slide.png" alt="Gambar 1">
+            <div class="hover-content">
+                <h3 class="img-title">Judul Gambar 1</h3>
+                <p class="img-description">Deskripsi untuk slide.png</p>
+            </div>
+        </div>
+        <div class="img-container">
+            <img src="./path/slide3.png" alt="Gambar 2">
+            <div class="hover-content">
+                <h3 class="img-title">Judul Gambar 2</h3>
+                <p class="img-description">Deskripsi untuk slide1.png</p>
+            </div>
+        </div>
+        <div class="img-container">
+            <img src="./path/slide.png" alt="Gambar 3">
+            <div class="hover-content">
+                <h3 class="img-title">Judul Gambar 3</h3>
+                <p class="img-description">Deskripsi untuk slide.png</p>
+            </div>
+        </div>
+        <div class="img-container">
+            <img src="./path/slide1.png" alt="Gambar 4">
+            <div class="hover-content">
+                <h3 class="img-title">Judul Gambar 4</h3>
+                <p class="img-description">Deskripsi untuk slide1.png</p>
+            </div>
+        </div>
+        <div class="img-container">
+            <img src="./path/slide.png" alt="Gambar 5">
+            <div class="hover-content">
+                <h3 class="img-title">Judul Gambar 5</h3>
+                <p class="img-description">Deskripsi untuk slide.png</p>
+            </div>
+        </div>
+    </div>
+    <i class="fa-solid fa-angle-right" id="right"></i>
+    </div>
+</div>
+
+<div class="sedang-tayang2">
+    <h4>Akan Tayang</h4>
+  </div>
+
+  <!-- Tab untuk Pilihan Bioskop -->
+</div>
+  <div class="tayang2">
+    <div class="d-flex">
+      <a href="#" class="btn-bioskop1">Semua Bioskop</a>
+      <a href="#" class="btn-bioskop">CGV</a>
+      <a href="#" class="btn-bioskop">XXI</a>
+    </div>
+  </div>
+
+
+  <div class="container mt-3">
+    <div class="row" id="movie-list">
+        <!-- List Moive -->
+    </div>
+</div>
+
+<!-- Modal Boooking -->
+<div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="bookingModalLabel">Book Your Ticket</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label for="movieTitle" class="form-label">Movie Title</label>
+                    <input type="text" class="form-control" id="movieTitle" readonly>
+                </div>
+                <div class="mb-3">
+                    <label for="name" class="form-label">Your Name</label>
+                    <input type="text" class="form-control" id="name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="seats" class="form-label">Number of Seats</label>
+                    <input type="number" class="form-control" id="seats" required min="1" max="10">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="bookTicket()">Book Ticket</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
