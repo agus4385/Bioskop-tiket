@@ -14,7 +14,7 @@ arrowIcons.forEach(icon => {
 // Fungsi untuk memulai drag
 const dragStart = (e) => {
     isDragStart = true;
-    isDragging = false; // Set ke false saat drag dimulai
+    isDragging = false;
     prevPageX = e.pageX || e.touches[0].pageX;
     prevScrollLeft = carousel.scrollLeft;
 }
@@ -22,7 +22,7 @@ const dragStart = (e) => {
 // Fungsi untuk dragging
 const dragging = (e) => {
     if (!isDragStart) return;
-    isDragging = true; // Set ke true saat sedang dragging
+    isDragging = true; 
     e.preventDefault();
     positionDiff = (e.pageX || e.touches[0].pageX) - prevPageX;
     carousel.scrollLeft = prevScrollLeft - positionDiff;
@@ -41,9 +41,9 @@ const dragStop = () => {
 // Fungsi auto-scroll inertia saat drag dilepas
 const autoScroll = () => {
     if (Math.abs(positionDiff) > 1) {
-        carousel.scrollLeft -= positionDiff * 0.95; // Kurangi sedikit untuk memberikan efek inersia
-        positionDiff *= 0.95; // Kurangi kecepatan secara bertahap
-        requestAnimationFrame(autoScroll); // Ulangi animasi sampai kecepatan cukup kecil
+        carousel.scrollLeft -= positionDiff * 0.95; 
+        positionDiff *= 0.95; 
+        requestAnimationFrame(autoScroll);
     }
 }
 
@@ -113,50 +113,3 @@ function bookTicket() {
     document.getElementById('seats').value = '';
 }
 
-///////
-document.addEventListener('DOMContentLoaded', function() {
-    // Ambil semua elemen slide dan navigasi
-    const slides = document.querySelectorAll('.cd-hero-slider li');
-    const sliderNav = document.querySelectorAll('.cd-slider-nav ul li');
-    
-    // Array untuk gambar latar belakang yang berbeda
-    const backgroundImages = [
-        'url("./path/slide.png")',  // Background untuk slide pertama
-        'url("./path/slide2.png")',  // Background untuk slide kedua
-        'url("./path/slide3.png")',   // Background untuk slide ketiga
-        'url("./path/slide1.png")',   // Background untuk slide ketiga
-        'url("./path/slide3.png")',   // Background untuk slide ketiga
-
-    ];
-    
-    let currentSlide = 0;
-    
-    // Fungsi untuk mengganti slide
-    function changeSlide(index) {
-        // Hapus kelas 'selected' dari slide dan navigasi yang aktif
-        slides[currentSlide].classList.remove('selected');
-        sliderNav[currentSlide].classList.remove('selected');
-        
-        // Tambahkan kelas 'selected' ke slide dan navigasi baru
-        slides[index].classList.add('selected');
-        sliderNav[index].classList.add('selected');
-        
-        // Ubah background sesuai dengan slide yang aktif
-        document.querySelector('.cd-full-width').style.backgroundImage = backgroundImages[index];
-        
-        currentSlide = index;
-    }
-    
-    // Ketika navigasi diklik, ganti slide sesuai indeks
-    sliderNav.forEach((navItem, index) => {
-        navItem.addEventListener('click', function() {
-            changeSlide(index);
-        });
-    });
-
-    // Autoplay slide setiap 5 detik
-    setInterval(function() {
-        let nextSlide = (currentSlide + 1) % slides.length;
-        changeSlide(nextSlide);
-    }, 5000);
-});
